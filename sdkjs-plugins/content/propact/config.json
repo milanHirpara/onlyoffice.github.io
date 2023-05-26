@@ -6,7 +6,7 @@
         {
             "description"         : "Propact",
             "url"                 : "index.html",
-            "icons"               : ["resources/img/icon.png", "resources/img/icon@2x.png"],
+            "icons"               : ["resources/img/ic_40.png", "resources/img/ic_80.png"],
             "isViewer"            : false,
             "EditorsSupport"      : ["word"],
             "isVisual"            : false,
@@ -20,7 +20,7 @@
         {
             "description"         : "About",
             "url"                 : "index_about.html",
-            "icons"               : ["resources/img/icon.png", "resources/img/icon@2x.png"],
+            "icons"               : ["resources/img/ic_40.png", "resources/img/ic_80.png"],
             "isViewer"            : false,
             "EditorsSupport"      : ["word"],
             "isVisual"            : true,

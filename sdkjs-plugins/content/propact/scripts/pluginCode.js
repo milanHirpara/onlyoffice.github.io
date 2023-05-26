@@ -1,6 +1,6 @@
 (function(window, undefined){
     
-    var text = "Hello world!";
+    var text = "Hello this is propact plugin testing!";
 
     window.Asc.plugin.init = function()
     {
@@ -25,7 +25,7 @@
                 this.callCommand(function() {
                     var oDocument = Api.GetDocument();
                     var oParagraph = Api.CreateParagraph();
-                    oParagraph.AddText("Hello world!");
+                    oParagraph.AddText("Hello this is propact plugin testing!");
                     oDocument.InsertContent([oParagraph]);
                 }, true);
                 break;
