@@ -1,0 +1,24 @@
+{
+  "name": "Custom Comment",
+  "guid": "asc.{7645D461-84BC-4FB0-A42C-98118C14A1CD}",
+  "version": "1.0.1",
+  "variations": [
+    {
+      "description": "Add comment with custom requirement",
+      "url": "index.html",
+      "icons": [
+        "resources/img/ic_40.png",
+        "resources/img/ic_80.png"
+      ],
+      "isViewer": false,
+      "EditorsSupport": [
+        "word"
+      ],
+      "isVisual": true,
+      "isModal": false,
+      "isInsideMode": true,
+      "initDataType": "none",
+      "isUpdateOleOnResize": false
+    }
+  ]
+}
