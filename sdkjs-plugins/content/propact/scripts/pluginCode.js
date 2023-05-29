@@ -5,7 +5,6 @@
         console.log("MOUSEMOVE", e)
     })
     window.Asc.plugin.init = function (e) {
-
         var variant = 2;
         switch (variant) {
             case 0: {
@@ -97,21 +96,28 @@
 
     function getEditorPosition(e)
     {
+        var editor = document.getElementById("id_viewer");
         var X = e.pageX;
         var Y = e.pageY;
-
+        console.log(" e.pageX", e.pageX)
+        console.log(" e.pageY", e.pageY)
         if (undefined === X)
             X = e.clientX;
         if (undefined === Y)
             Y = e.clientY;
-
+        console.log(" e.clientX", e.clientX)
+        console.log(" e.clientY", e.clientY)
         var jF = jQuery(editor);
         var off = jF.offset();
+        console.log(" e.off", off)
         var x = off.left;
         var y = off.top;
+        console.log(" e.left",  off.left)
+        console.log(" e.top", off.top)
         var r = x + jF.width();
         var b = y + jF.height();
-
+        console.log(" e.r",  r)
+        console.log(" e.b", b)
         if (X >= x && X <= r && Y >= y && Y <= b)
         {
             return { x : X - x, y : Y - y };
