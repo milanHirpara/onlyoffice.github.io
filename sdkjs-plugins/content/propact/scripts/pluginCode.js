@@ -28,6 +28,10 @@
                 break;
             }
             case 2: {
+
+                window.Asc.plugin.executeMethod("GetSelectedText", [{Numbering:false}], function(data) {
+                    console.log("GetSelectedTextDATA",data)
+                });
                 console.log("INSIDE THE CASE 3")
                 var _info = window.Asc.plugin.info;
                 console.log("_info",_info)
