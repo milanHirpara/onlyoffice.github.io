@@ -4,7 +4,7 @@
     document.addEventListener('mousemove', function (e) {
         console.log("MOUSEMOVE", e)
     })
-    window.Asc.plugin.init = function () {
+    window.Asc.plugin.init = function (e) {
 
         var variant = 2;
         switch (variant) {
@@ -31,30 +31,39 @@
                 break;
             }
             case 2: {
+                var pos = getEditorPosition(e);
+                console.log("pos",pos)
+                // window.Asc.plugin.executeMethod ("OnDropEvent", [{
+                //     "type": "ondrop",
+                //     "x" : pos.x,
+                //     "y" : pos.y,
+                //     "text" : "test text",
+                //     "html" : "test html"
+                // }]);
 
-                window.onmousemove = function (e) {
-                    console.log("onmousemove", e)
-                    // if (!isDragging)
-                    //     return;
-                    //
-                    // document.body.style.cursor = "copy";
-                    //
-                    // var pos = getEditorPosition(e);
-                    //
-                    // if (pos)
-                    // {
-                    //     oldSendPos = { x : pos.x, y : pos.y };
-                    //     sendToEditor({
-                    //         type : "onExternalPluginMessage",
-                    //         subType: "internalCommand",
-                    //         data : {
-                    //             type: "onbeforedrop",
-                    //             x : pos.x,
-                    //             y : pos.y
-                    //         }
-                    //     });
-                    // }
-                }
+                // window.onmousemove = function (e) {
+                //     console.log("onmousemove", e)
+                //     // if (!isDragging)
+                //     //     return;
+                //     //
+                //     // document.body.style.cursor = "copy";
+                //     //
+                //     // var pos = getEditorPosition(e);
+                //     //
+                //     // if (pos)
+                //     // {
+                //     //     oldSendPos = { x : pos.x, y : pos.y };
+                //     //     sendToEditor({
+                //     //         type : "onExternalPluginMessage",
+                //     //         subType: "internalCommand",
+                //     //         data : {
+                //     //             type: "onbeforedrop",
+                //     //             x : pos.x,
+                //     //             y : pos.y
+                //     //         }
+                //     //     });
+                //     // }
+                // }
 
                 window.Asc.plugin.executeMethod("GetSelectedText", [{Numbering: true}], function (data) {
                     console.log("GetSelectedTextDATA", data)
@@ -85,5 +94,31 @@
 
     window.Asc.plugin.button = function (id) {
     };
+
+    function getEditorPosition(e)
+    {
+        var X = e.pageX;
+        var Y = e.pageY;
+
+        if (undefined === X)
+            X = e.clientX;
+        if (undefined === Y)
+            Y = e.clientY;
+
+        var jF = jQuery(editor);
+        var off = jF.offset();
+        var x = off.left;
+        var y = off.top;
+        var r = x + jF.width();
+        var b = y + jF.height();
+
+        if (X >= x && X <= r && Y >= y && Y <= b)
+        {
+            return { x : X - x, y : Y - y };
+        }
+
+        return null;
+    }
+
 
 })(window, undefined);
