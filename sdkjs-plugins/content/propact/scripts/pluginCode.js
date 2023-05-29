@@ -4,7 +4,6 @@
 
     window.Asc.plugin.init = function () {
         var variant = 2;
-
         switch (variant) {
             case 0: {
                 console.log("INSIDE THE CASE 0")
@@ -30,7 +29,8 @@
             }
             case 2: {
                 console.log("INSIDE THE CASE 3")
-                alert(text)
+                var _info = window.Asc.plugin.info;
+                console.log("_info",_info)
                 // call command with external variables
                 Asc.scope.text = text; // export variable to plugin scope
                 this.callCommand(function () {
