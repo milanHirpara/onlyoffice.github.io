@@ -31,7 +31,7 @@
             }
             case 2: {
                 var pos = getEditorPosition(e);
-                console.log("pos",pos)
+                console.log("pos", pos)
                 // window.Asc.plugin.executeMethod ("OnDropEvent", [{
                 //     "type": "ondrop",
                 //     "x" : pos.x,
@@ -94,9 +94,9 @@
     window.Asc.plugin.button = function (id) {
     };
 
-    function getEditorPosition(e)
-    {
+    function getEditorPosition(e) {
         var editor = document.getElementById("id_viewer");
+        console.log("editor", editor)
         var X = e.pageX;
         var Y = e.pageY;
         console.log(" e.pageX", e.pageX)
@@ -112,15 +112,14 @@
         console.log(" e.off", off)
         var x = off.left;
         var y = off.top;
-        console.log(" e.left",  off.left)
+        console.log(" e.left", off.left)
         console.log(" e.top", off.top)
         var r = x + jF.width();
         var b = y + jF.height();
-        console.log(" e.r",  r)
+        console.log(" e.r", r)
         console.log(" e.b", b)
-        if (X >= x && X <= r && Y >= y && Y <= b)
-        {
-            return { x : X - x, y : Y - y };
+        if (X >= x && X <= r && Y >= y && Y <= b) {
+            return {x: X - x, y: Y - y};
         }
 
         return null;
