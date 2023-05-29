@@ -30,8 +30,8 @@
                 break;
             }
             case 2: {
-                var pos = getEditorPosition(e);
-                console.log("pos", pos)
+                // var pos = getEditorPosition(e);
+                // console.log("pos", pos)
                 // window.Asc.plugin.executeMethod ("OnDropEvent", [{
                 //     "type": "ondrop",
                 //     "x" : pos.x,
@@ -89,6 +89,16 @@
             default:
                 break;
         }
+    };
+
+    window.Asc.plugin.onExternalMouseUp = function()
+    {
+        var evt = document.createEvent("MouseEvents");
+        evt.initMouseEvent("mousemove", true, true, window, 1, 0, 0, 0, 0,
+            false, false, false, false, 0, null);
+        var pos = getEditorPosition(evt)
+        console.log("pos MOUNSSE", pos)
+        document.dispatchEvent(evt);
     };
 
     window.Asc.plugin.button = function (id) {
