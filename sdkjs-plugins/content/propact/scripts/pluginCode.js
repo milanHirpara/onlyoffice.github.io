@@ -35,6 +35,7 @@
                 console.log("INSIDE THE CASE 3")
                 var _info = window.Asc.plugin.info;
                 console.log("_info",_info)
+                console.log("_infoDATA",_info.data)
                 console.log("_info.width",_info.width)
                 console.log("_info.height",_info.height)
                 console.log("_info.mmToPx * _info.width",_info.mmToPx * _info.width)
