@@ -32,6 +32,31 @@
             }
             case 2: {
 
+                window.onmousemove = function(e)
+                {
+                    console.log("onmousemove",e)
+                    // if (!isDragging)
+                    //     return;
+                    //
+                    // document.body.style.cursor = "copy";
+                    //
+                    // var pos = getEditorPosition(e);
+                    //
+                    // if (pos)
+                    // {
+                    //     oldSendPos = { x : pos.x, y : pos.y };
+                    //     sendToEditor({
+                    //         type : "onExternalPluginMessage",
+                    //         subType: "internalCommand",
+                    //         data : {
+                    //             type: "onbeforedrop",
+                    //             x : pos.x,
+                    //             y : pos.y
+                    //         }
+                    //     });
+                    // }
+                }
+
                 window.Asc.plugin.executeMethod("GetSelectedText", [{Numbering: true}], function (data) {
                     console.log("GetSelectedTextDATA", data)
                 });
