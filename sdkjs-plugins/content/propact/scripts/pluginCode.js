@@ -1,11 +1,11 @@
 (function (window, undefined) {
 
     var text = "Hello this is propact plugin testing!11";
-
+    document.addEventListener('mousemove', function (e) {
+        console.log("MOUSEMOVE", e)
+    })
     window.Asc.plugin.init = function () {
-        document.addEventListener('mousemove', function (e) {
-            console.log("MOUSEMOVE", e)
-        })
+
         var variant = 2;
         switch (variant) {
             case 0: {
@@ -32,9 +32,8 @@
             }
             case 2: {
 
-                window.onmousemove = function(e)
-                {
-                    console.log("onmousemove",e)
+                window.onmousemove = function (e) {
+                    console.log("onmousemove", e)
                     // if (!isDragging)
                     //     return;
                     //
