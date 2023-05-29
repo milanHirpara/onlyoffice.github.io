@@ -29,7 +29,7 @@
             }
             case 2: {
 
-                window.Asc.plugin.executeMethod("GetSelectedText", [{Numbering:false}], function(data) {
+                window.Asc.plugin.executeMethod("GetSelectedText", [{Numbering:true}], function(data) {
                     console.log("GetSelectedTextDATA",data)
                 });
                 console.log("INSIDE THE CASE 3")
